@@ -1,0 +1,120 @@
+<%@ page import="org.iesbelen.model.Usuario" %><%--
+  Created by IntelliJ IDEA.
+  User: usuario
+  Date: 13/11/2023
+  Time: 14:16
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    Usuario usuario;
+    if (request.getSession().getAttribute("usuario-logueado")!= null) {
+        usuario = (Usuario) request.getSession().getAttribute("usuario-logueado");
+    }else {
+        usuario = null;
+    }
+%>
+<html>
+<head>
+    <title>Title</title>
+    <%@include file="boostrap.jspf"%>
+    <style>
+        .menu {
+            position: sticky;
+            top: 0;
+            background-color:#2b2d30;
+            padding:4px;
+            color: #0d9ff8;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .menu a {
+            float: left;
+            color: #0d9ff8;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 20px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin-right: 10px;
+            transition: all 0.6s;
+        }
+        .menu a:hover{
+            background-color: rgba(245, 222, 179, 0.47);
+            transform: scale(1.1);
+            color: #e5a824;
+        }
+        .menu a:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 5px;
+            background: rgb(159, 66, 66);
+            transition: 0.8s;
+        }
+        .menu a:hover:after {
+            left: 0;
+        }
+        .menu-log {
+            right: auto;
+            float: right;
+        }
+        .menu-log a{
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Menu Navigation Bar -->
+<nav class="menu" >
+    <span><a href="${pageContext.request.contextPath}">HOME</a></span>
+    <span><a href="${pageContext.request.contextPath}/tienda/fabricantes">Frabricantes</a></span>
+    <span><a href="${pageContext.request.contextPath}/tienda/productos/">Productos</a></span>
+    <%
+        String deshabilitar = "disabled";
+        if (request.getSession().getAttribute("usuario-logueado")!= null) {
+            usuario = (Usuario) request.getSession().getAttribute("usuario-logueado");
+
+            if (usuario.getRol().equals("Administrador")){
+                deshabilitar = "aria-disabled";
+    %>
+                <span><a href="${pageContext.request.contextPath}/usuarios/">Usuarios</a></span>
+    <%
+            }
+        }
+
+    %>
+
+    <div class="menu-log">
+        <%
+            if (usuario!= null){
+
+        %>
+                <form  action="${pageContext.request.contextPath}/tienda/login"  method="post">
+
+                    <a style="float: right;" href="">
+                        <input type="submit" name="__method__" value="Logout" style="opacity: 0;position: absolute;padding: 25px;margin-left: -15px;margin-top: -15px">
+                        Logout
+                    </a>
+
+                    <div style="float: right;margin-right: 10px;font-size: 20px;padding: 15px"><%=usuario.getUsuario()%></div>
+                </form>
+            <%
+            }else{
+            %>
+                <a href="${pageContext.request.contextPath}/tienda/login">Login</a>
+            <%
+            }
+            %>
+
+
+
+    </div>
+</nav>
+</body>
+</html>

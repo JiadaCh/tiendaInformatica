@@ -1,0 +1,32 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: usuario
+  Date: 13/11/2023
+  Time: 14:16
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        footer {
+            width: 100%;
+            bottom: 0;
+            margin-top: 25px;
+            background-color:#2b2d30;
+            color: #0d9ff8;
+            position: absolute;
+            padding-top:25px;
+            padding-bottom:25px;
+            text-align:center;
+            font-size:30px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+<!-- Footer Section -->
+<footer>Jiada Chen</footer>
+</body>
+</html>
