@@ -1,7 +1,5 @@
-<%@ page language="java"
+<%@ page
          pageEncoding="UTF-8" %>
-<%@page import="java.util.List" %>
-<%@ page import="org.iesbelen.model.Usuario" %>
 
 <!DOCTYPE html>
 <html>
@@ -65,7 +63,9 @@
                         Nombre:
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="nombre"/>
+                        <label>
+                            <input name="nombre"/>
+                        </label>
                     </div>
                 </div>
 
@@ -74,7 +74,9 @@
                         Contraseña:
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="password"/>
+                        <label>
+                            <input name="password"/>
+                        </label>
                     </div>
                 </div>
                 <div style="margin-top: 6px;" class="clearfix">
@@ -82,12 +84,14 @@
                         Rol:
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <select name="rol">
-                            <option value="Administrador">Administrador</option>
-                            <option value="Cliente">Cliente</option>
-                            <option value="Vendedor">Vendedor</option>
+                        <label>
+                            <select name="rol">
+                                <option value="Administrador">Administrador</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Vendedor">Vendedor</option>
 
-                        </select>
+                            </select>
+                        </label>
                     </div>
                 </div>
             </form>

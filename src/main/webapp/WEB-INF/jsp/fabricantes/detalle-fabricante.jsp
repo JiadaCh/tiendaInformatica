@@ -1,6 +1,6 @@
-<%@ page language="java"
+<%@ page
          pageEncoding="UTF-8" %>
-<%@page import="org.iesbelen.model.Fabricante" %>
+
 <%@page import="java.util.Optional" %>
 <%@ page import="org.iesbelen.dto.FabricanteDTO" %>
 <!DOCTYPE html>
@@ -61,7 +61,9 @@
                     <label>Código</label>
                 </div>
                 <div style="float: none;width: auto;overflow: hidden;">
-                    <input value="<%= optFab.get().getIdFabricante() %>" readonly="readonly"/>
+                    <label>
+                        <input value="<%= optFab.get().getIdFabricante() %>" readonly="readonly"/>
+                    </label>
                 </div>
             </div>
             <div style="margin-top: 6px;" class="clearfix">
@@ -69,7 +71,9 @@
                     <label>Nombre</label>
                 </div>
                 <div style="float: none;width: auto;overflow: hidden;">
-                    <input value="<%= optFab.get().getNombre() %>" readonly="readonly"/>
+                    <label>
+                        <input value="<%= optFab.get().getNombre() %>" readonly="readonly"/>
+                    </label>
                 </div>
             </div>
             <div style="margin-top: 6px;" class="clearfix">
@@ -77,7 +81,9 @@
                     <label>Numero de productos</label>
                 </div>
                 <div style="float: none;width: auto;overflow: hidden;">
-                    <input value="<%= optFab.get().getNumProductos() %>" readonly="readonly"/>
+                    <label>
+                        <input value="<%= optFab.get().getNumProductos() %>" readonly="readonly"/>
+                    </label>
                 </div>
             </div>
 

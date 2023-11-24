@@ -13,11 +13,13 @@ import org.iesbelen.dao.ProductoDAOImpl;
 import org.iesbelen.model.Producto;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.util.List;
 
 @WebServlet(name = "productosServlet", value = "/tienda/productos/*")
 public class ProductosServlet extends HttpServlet {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     /**
@@ -128,9 +130,8 @@ public class ProductosServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
 
-        RequestDispatcher dispatcher;
         String __method__ = request.getParameter("__method__");
 
         if (__method__ == null) {
@@ -167,8 +168,7 @@ public class ProductosServlet extends HttpServlet {
 
 
     @Override
-    protected void doPut(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) {
 
         ProductoDAO prodDAO = new ProductoDAOImpl();
         String codigoProd = request.getParameter("codigoProd");

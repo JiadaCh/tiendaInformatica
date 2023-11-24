@@ -56,7 +56,7 @@ public class UsuariosFilter extends HttpFilter implements Filter {
         //Obteniendo la url
         String url = httpRequest.getRequestURL().toString();
 
-        Usuario usuario = null;
+        Usuario usuario;
 
         if (session != null  //Seteo inline de usuario
                 && (usuario = (Usuario) session.getAttribute("usuario-logueado")) != null
@@ -75,7 +75,7 @@ public class UsuariosFilter extends HttpFilter implements Filter {
     /**
      * @see Filter#init(FilterConfig)
      */
-    public void init(FilterConfig fConfig) throws ServletException {
+    public void init(FilterConfig fConfig) {
 
         this.rolAcceso = fConfig.getInitParameter("acceso-concedido-a-rol");
 

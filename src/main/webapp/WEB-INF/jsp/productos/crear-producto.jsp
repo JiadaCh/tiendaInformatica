@@ -1,7 +1,6 @@
-<%@ page language="java"
+<%@ page
          pageEncoding="UTF-8" %>
 <%@page import="org.iesbelen.model.Fabricante" %>
-<%@page import="java.util.Optional" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -67,7 +66,9 @@
                         Nombre
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="nombre"/>
+                        <label>
+                            <input name="nombre"/>
+                        </label>
                     </div>
                 </div>
 
@@ -76,24 +77,28 @@
                         Precio
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="precio"/>
+                        <label>
+                            <input name="precio"/>
+                        </label>
                     </div>
                 </div>
                 <div style="margin-top: 6px;" class="clearfix">
                     <div style="float: left;width: 50%">
                         Código Fabricante
                     </div>
-                    <select name="idFabricante">
-                        <%
-                            for (Fabricante fab : listaFabricante) {
-                        %>
-                        <option value="<%=fab.getIdFabricante()%>">
-                            <%=fab.getNombre()%>
-                        </option>
-                        <%
-                            }
-                        %>
-                    </select>
+                    <label>
+                        <select name="idFabricante">
+                            <%
+                                for (Fabricante fab : listaFabricante) {
+                            %>
+                            <option value="<%=fab.getIdFabricante()%>">
+                                <%=fab.getNombre()%>
+                            </option>
+                            <%
+                                }
+                            %>
+                        </select>
+                    </label>
                 </div>
             </form>
             <%

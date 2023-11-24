@@ -7,11 +7,11 @@ import org.iesbelen.model.Fabricante;
 
 public interface FabricanteDAO {
 		
-	public void create(Fabricante fabricante);
-	public List<Fabricante> getAll();
-	public Optional<Fabricante>  find(int id);
-	public void update(Fabricante fabricante);
-	public void delete(int id);
+	void create(Fabricante fabricante);
+	List<Fabricante> getAll();
+	 Optional<Fabricante>  find(int id);
+	 void update(Fabricante fabricante);
+	 void delete(int id);
 
-	public Optional<Integer> getCountProductos (int id);
+	 Optional<Integer> getCountProductos (int id);
 }

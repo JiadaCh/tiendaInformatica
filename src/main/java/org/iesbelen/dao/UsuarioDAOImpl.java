@@ -1,6 +1,5 @@
 package org.iesbelen.dao;
 
-import org.iesbelen.model.Fabricante;
 import org.iesbelen.model.Usuario;
 
 import java.security.NoSuchAlgorithmException;
@@ -20,7 +19,7 @@ public class UsuarioDAOImpl extends AbstractDAOImpl implements UsuarioDAO{
 		Connection conn = null;
 		PreparedStatement ps = null;
         ResultSet rs = null;
-        ResultSet rsGenKeys = null;
+        ResultSet rsGenKeys;
 
         try {
         	conn = connectDB();
@@ -107,7 +106,7 @@ public class UsuarioDAOImpl extends AbstractDAOImpl implements UsuarioDAO{
         	
         	if (rs.next()) {
         		Usuario user = new Usuario();
-        		idx = 1;
+
 				user.setIdUsuario(rs.getInt(idx++));
 				user.setUsuario(rs.getString(idx++));
 				user.setPassword(rs.getString(idx++));

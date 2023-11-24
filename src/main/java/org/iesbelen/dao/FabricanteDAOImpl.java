@@ -22,7 +22,7 @@ public class FabricanteDAOImpl extends AbstractDAOImpl implements FabricanteDAO{
 		Connection conn = null;
 		PreparedStatement ps = null;
         ResultSet rs = null;
-        ResultSet rsGenKeys = null;
+        ResultSet rsGenKeys;
 
         try {
         	conn = connectDB();
@@ -35,7 +35,7 @@ public class FabricanteDAOImpl extends AbstractDAOImpl implements FabricanteDAO{
         	ps = conn.prepareStatement("INSERT INTO fabricantes (nombre) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
             
             int idx = 1;
-            ps.setString(idx++, fabricante.getNombre());
+            ps.setString(idx, fabricante.getNombre());
                    
             int rows = ps.executeUpdate();
             if (rows == 0) 
@@ -45,9 +45,7 @@ public class FabricanteDAOImpl extends AbstractDAOImpl implements FabricanteDAO{
             if (rsGenKeys.next()) 
             	fabricante.setIdFabricante(rsGenKeys.getInt(1));
                       
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} finally {
             closeDb(conn, ps, rs);
@@ -106,7 +104,7 @@ public class FabricanteDAOImpl extends AbstractDAOImpl implements FabricanteDAO{
         	
         	if (rs.next()) {
         		Fabricante fab = new Fabricante();
-        		idx = 1;
+
         		fab.setIdFabricante(rs.getInt(idx++));
         		fab.setNombre(rs.getString(idx));
         		

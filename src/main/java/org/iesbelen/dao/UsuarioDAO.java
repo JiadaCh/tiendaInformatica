@@ -8,11 +8,10 @@ import java.util.Optional;
 
 public interface UsuarioDAO {
 		
-	public void create(Usuario usuario);
-	public List<Usuario> getAll();
-	public Optional<Usuario>  find(int id);
-	public void update(Usuario usuario);
-	public void delete(int id);
-
-	public Optional<Usuario>  findUser(String usuario, String password);
+	 void create(Usuario usuario);
+	 List<Usuario> getAll();
+	 Optional<Usuario>  find(int id);
+	 void update(Usuario usuario);
+	 void delete(int id);
+	 Optional<Usuario>  findUser(String usuario, String password);
 }

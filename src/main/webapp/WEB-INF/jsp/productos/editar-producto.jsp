@@ -1,6 +1,5 @@
-<%@ page language="java"
+<%@ page
          pageEncoding="UTF-8" %>
-<%@page import="org.iesbelen.model.Fabricante" %>
 <%@page import="java.util.Optional" %>
 <%@ page import="org.iesbelen.model.Producto" %>
 <!DOCTYPE html>
@@ -61,7 +60,9 @@
                         <label>Código Producto</label>
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="codigoProd" value="<%= optProd.get().getIdProducto() %>" readonly="readonly"/>
+                        <label>
+                            <input name="codigoProd" value="<%= optProd.get().getIdProducto() %>" readonly="readonly"/>
+                        </label>
                     </div>
                 </div>
                 <div style="margin-top: 6px;" class="clearfix">
@@ -69,20 +70,26 @@
                         <label>Nombre</label>
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="nombre" value="<%= optProd.get().getNombre() %>"/>
+                        <label>
+                            <input name="nombre" value="<%= optProd.get().getNombre() %>"/>
+                        </label>
                     </div>
                     <div style="float: left;width: 50%">
                         <label>Precio</label>
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="precio" value="<%= optProd.get().getPrecio() %>" readonly="readonly"/>
+                        <label>
+                            <input name="precio" value="<%= optProd.get().getPrecio() %>" readonly="readonly"/>
+                        </label>
                     </div>
                     <div style="float: left;width: 50%">
                         <label>Código fabricante</label>
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="codigoFab" value="<%= optProd.get().getCodigo_fabricante() %>"
-                               readonly="readonly"/>
+                        <label>
+                            <input name="codigoFab" value="<%= optProd.get().getCodigo_fabricante() %>"
+                                   readonly="readonly"/>
+                        </label>
                     </div>
                 </div>
 

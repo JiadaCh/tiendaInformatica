@@ -1,6 +1,5 @@
-<%@ page language="java"
+<%@ page
          pageEncoding="UTF-8" %>
-<%@page import="java.util.List" %>
 <%@ page import="org.iesbelen.model.Usuario" %>
 <%@ page import="java.util.Optional" %>
 
@@ -62,7 +61,9 @@
                             <label>Código Usuario</label>
                         </div>
                         <div style="float: none;width: auto;overflow: hidden;">
-                            <input value="<%= optUser.get().getIdUsuario() %>" readonly="readonly"/>
+                            <label>
+                                <input value="<%= optUser.get().getIdUsuario() %>" readonly="readonly"/>
+                            </label>
                         </div>
                     </div>
                     <div style="margin-top: 6px;" class="clearfix">
@@ -70,19 +71,25 @@
                             <label>Usuario</label>
                         </div>
                         <div style="float: none;width: auto;overflow: hidden;">
-                            <input value="<%= optUser.get().getUsuario() %>" readonly="readonly"/>
+                            <label>
+                                <input value="<%= optUser.get().getUsuario() %>" readonly="readonly"/>
+                            </label>
                         </div>
                         <div style="float: left;width: 50%">
                             <label>Contraseña</label>
                         </div>
                         <div style="float: none;width: auto;overflow: hidden;">
-                            <input value="<%=  optUser.get().getPassword() %>" readonly="readonly"/>
+                            <label>
+                                <input value="<%=  optUser.get().getPassword() %>" readonly="readonly"/>
+                            </label>
                         </div>
                         <div style="float: left;width: 50%">
                             <label>Rol</label>
                         </div>
                         <div style="float: none;width: auto;overflow: hidden;">
-                            <input value="<%= optUser.get().getRol() %>" readonly="readonly"/>
+                            <label>
+                                <input value="<%= optUser.get().getRol() %>" readonly="readonly"/>
+                            </label>
                         </div>
                     </div>
 

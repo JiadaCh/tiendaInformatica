@@ -1,28 +1,26 @@
 package org.iesbelen.servlet;
 
-import java.io.IOException;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import org.iesbelen.dao.FabricanteDAO;
 import org.iesbelen.dao.FabricanteDAOImpl;
-import org.iesbelen.dao.ProductoDAO;
-import org.iesbelen.dao.ProductoDAOImpl;
-import org.iesbelen.model.Fabricante;
 import org.iesbelen.dto.FabricanteDTO;
+import org.iesbelen.model.Fabricante;
+
+import java.io.IOException;
+import java.io.Serial;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 
 @WebServlet(name = "fabricantesServlet", value = "/tienda/fabricantes/*")
 public class FabricantesServlet extends HttpServlet {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -128,9 +126,8 @@ public class FabricantesServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws IOException {
 
-		RequestDispatcher dispatcher;
 		String __method__ = request.getParameter("__method__");
 
 		if (__method__ == null) {
@@ -161,8 +158,7 @@ public class FabricantesServlet extends HttpServlet {
 
 
 	@Override
-	protected void doPut(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) {
 
 		FabricanteDAO fabDAO = new FabricanteDAOImpl();
 		String codigo = request.getParameter("codigo");

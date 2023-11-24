@@ -18,7 +18,7 @@ public class ProductoDAOImpl extends AbstractDAOImpl implements ProductoDAO{
 		Connection conn = null;
 		PreparedStatement ps = null;
         ResultSet rs = null;
-        ResultSet rsGenKeys = null;
+        ResultSet rsGenKeys;
 
         try {
         	conn = connectDB();
@@ -33,7 +33,7 @@ public class ProductoDAOImpl extends AbstractDAOImpl implements ProductoDAO{
             int idx = 1;
             ps.setString(idx++, producto.getNombre());
 			ps.setDouble(idx++, producto.getPrecio());
-			ps.setInt(idx++,producto.getCodigo_fabricante());
+			ps.setInt(idx,producto.getCodigo_fabricante());
                    
             int rows = ps.executeUpdate();
             if (rows == 0) 
@@ -110,18 +110,16 @@ public class ProductoDAOImpl extends AbstractDAOImpl implements ProductoDAO{
         	
         	if (rs.next()) {
         		Producto prod = new Producto();
-        		idx = 1;
+
         		prod.setIdProducto(rs.getInt(idx++));
         		prod.setNombre(rs.getString(idx++));
 				prod.setPrecio(rs.getDouble(idx++));
-				prod.setCodigo_fabricante(rs.getInt(idx++));
+				prod.setCodigo_fabricante(rs.getInt(idx));
         		
         		return Optional.of(prod);
         	}
         	
-        } catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		} finally {
             closeDb(conn, ps, rs);

@@ -56,7 +56,7 @@ public class FabricantesFilter extends HttpFilter implements Filter {
         //Obteniendo la url
         String url = httpRequest.getRequestURL().toString();
 
-        Usuario usuario = null;
+        Usuario usuario;
         if (session != null  //Seteo inline de usuario
                 && (usuario = (Usuario) session.getAttribute("usuario-logueado")) != null
                 && "Administrador".equals(usuario.getRol())) {
@@ -79,8 +79,6 @@ public class FabricantesFilter extends HttpFilter implements Filter {
 
             // Otras rutas /fabricantes y /fabricantes/{id} se dan paso a cualquier rol
 
-            //RequestDispatcher dispatcher = httpRequest.getRequestDispatcher("/WEB-INF/jsp/fabricantes.jsp");
-            //dispatcher.forward(httpRequest, httpResponse);
             chain.doFilter(request, response);
         }
     }
@@ -88,7 +86,7 @@ public class FabricantesFilter extends HttpFilter implements Filter {
     /**
      * @see Filter#init(FilterConfig)
      */
-    public void init(FilterConfig fConfig) throws ServletException {
+    public void init(FilterConfig fConfig) {
 
         this.rolAcceso = fConfig.getInitParameter("acceso-concedido-a-rol");
 

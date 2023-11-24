@@ -7,22 +7,19 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.iesbelen.dao.FabricanteDAO;
-import org.iesbelen.dao.FabricanteDAOImpl;
 import org.iesbelen.dao.UsuarioDAO;
 import org.iesbelen.dao.UsuarioDAOImpl;
-import org.iesbelen.dto.FabricanteDTO;
-import org.iesbelen.model.Fabricante;
 import org.iesbelen.model.Usuario;
 
 import java.io.IOException;
+import java.io.Serial;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 import java.util.Optional;
 
 @WebServlet(name = "LoginServlet", value = "/tienda/login/*")
 public class LoginServelet extends HttpServlet {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     /**
@@ -51,9 +48,8 @@ public class LoginServelet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
 
-        RequestDispatcher dispatcher;
         String __method__ = request.getParameter("__method__");
 
         if (__method__ == null) {

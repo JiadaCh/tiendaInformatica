@@ -1,6 +1,5 @@
-<%@ page language="java"
+<%@ page
          pageEncoding="UTF-8" %>
-<%@page import="java.util.List" %>
 <%@ page import="org.iesbelen.model.Usuario" %>
 <%@ page import="java.util.Optional" %>
 
@@ -61,7 +60,9 @@
                         <label>Código Usuario</label>
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="codigo" value="<%= optUser.get().getIdUsuario() %>" readonly="readonly"/>
+                        <label>
+                            <input name="codigo" value="<%= optUser.get().getIdUsuario() %>" readonly="readonly"/>
+                        </label>
                     </div>
                 </div>
                 <div style="margin-top: 6px;" class="clearfix">
@@ -69,24 +70,30 @@
                         <label>Nombre</label>
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="nombre" value="<%= optUser.get().getUsuario() %>"/>
+                        <label>
+                            <input name="nombre" value="<%= optUser.get().getUsuario() %>"/>
+                        </label>
                     </div>
                     <div style="float: left;width: 50%">
                         <label>Contraseña</label>
                     </div>
                     <div style="float: none;width: auto;overflow: hidden;">
-                        <input name="password" value="<%= optUser.get().getPassword() %>" readonly="readonly"/>
+                        <label>
+                            <input name="password" value="<%= optUser.get().getPassword() %>" readonly="readonly"/>
+                        </label>
                     </div>
                     <div style="margin-top: 6px;" class="clearfix">
                         <div style="float: left;width: 50%">
                             Rol:
                         </div>
                         <div style="float: none;width: auto;overflow: hidden;">
-                            <select name="rol">
-                                <option value="Administrador">Administrador</option>
-                                <option value="Cliente">Cliente</option>
-                                <option value="Vendedor">Vendedor</option>
-                            </select>
+                            <label>
+                                <select name="rol">
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Cliente">Cliente</option>
+                                    <option value="Vendedor">Vendedor</option>
+                                </select>
+                            </label>
                         </div>
                     </div>
                 </div>

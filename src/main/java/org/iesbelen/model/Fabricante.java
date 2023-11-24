@@ -1,8 +1,6 @@
 package org.iesbelen.model;
 
 
-import java.util.Collection;
-
 public class Fabricante {
 
     private int idFabricante;
@@ -32,9 +30,7 @@ public class Fabricante {
         Fabricante that = (Fabricante) o;
 
         if (idFabricante != that.idFabricante) return false;
-        if (nombre != null ? !nombre.equals(that.nombre) : that.nombre != null) return false;
-
-        return true;
+        return nombre != null ? nombre.equals(that.nombre) : that.nombre == null;
     }
 
     @Override

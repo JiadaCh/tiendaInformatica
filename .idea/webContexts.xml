@@ -5,6 +5,9 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fabricantes/crear-fabricante.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fabricantes" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fabricantes/detalle-fabricante.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fabricantes" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fragmentos/nav.jspf" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fragmentos" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productos/productos.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/productos" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/usuarios/usuarios.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/usuarios" />
       </map>
     </option>
   </component>

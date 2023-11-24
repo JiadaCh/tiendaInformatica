@@ -2,7 +2,6 @@ package org.iesbelen.dto;
 
 import org.iesbelen.model.Fabricante;
 
-import java.util.Optional;
 
 public class FabricanteDTO extends Fabricante {
     private Integer numProductos;

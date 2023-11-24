@@ -1,4 +1,4 @@
-<%@ page language="java"
+<%@ page
          pageEncoding="UTF-8" %>
 <%@page import="java.util.Optional" %>
 <%@ page import="org.iesbelen.model.Producto" %>
@@ -60,7 +60,9 @@
                     <label>Código Producto</label>
                 </div>
                 <div style="float: none;width: auto;overflow: hidden;">
-                    <input value="<%= optProd.get().getIdProducto() %>" readonly="readonly"/>
+                    <label>
+                        <input value="<%= optProd.get().getIdProducto() %>" readonly="readonly"/>
+                    </label>
                 </div>
             </div>
             <div style="margin-top: 6px;" class="clearfix">
@@ -68,19 +70,25 @@
                     <label>Nombre</label>
                 </div>
                 <div style="float: none;width: auto;overflow: hidden;">
-                    <input value="<%= optProd.get().getNombre() %>" readonly="readonly"/>
+                    <label>
+                        <input value="<%= optProd.get().getNombre() %>" readonly="readonly"/>
+                    </label>
                 </div>
                 <div style="float: left;width: 50%">
                     <label>Precio</label>
                 </div>
                 <div style="float: none;width: auto;overflow: hidden;">
-                    <input value="<%= optProd.get().getPrecio() %>" readonly="readonly"/>
+                    <label>
+                        <input value="<%= optProd.get().getPrecio() %>" readonly="readonly"/>
+                    </label>
                 </div>
                 <div style="float: left;width: 50%">
                     <label>Código fabricante</label>
                 </div>
                 <div style="float: none;width: auto;overflow: hidden;">
-                    <input value="<%= optProd.get().getCodigo_fabricante() %>" readonly="readonly"/>
+                    <label>
+                        <input value="<%= optProd.get().getCodigo_fabricante() %>" readonly="readonly"/>
+                    </label>
                 </div>
             </div>
 
