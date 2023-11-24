@@ -1,5 +1,5 @@
-<%@ page language="java"
-         pageEncoding="UTF-8" %>
+<%@ page
+        pageEncoding="UTF-8" %>
 <%@page import="java.util.List" %>
 <%@ page import="org.iesbelen.model.Usuario" %>
 
